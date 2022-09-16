@@ -1,6 +1,6 @@
 # API Rest-Framework
 
-Take a hands-on with Django, sqlite, and React to observe and learn how APIs work.
+Take a hands-on with Django, postgrest, and React redux to observe and learn how APIs work.
 
 ![](docs/w1.png)
 ![](docs/w2.png)
