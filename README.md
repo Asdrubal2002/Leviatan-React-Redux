@@ -2,11 +2,11 @@
 
 Take a hands-on with Django, sqlite, and React to observe and learn how APIs work.
 
-![](docs/W1.png)
-![](docs/W2.png)
-![](docs/W3.png)
-![](docs/W4.png)
-![](docs/W5.png)
+![](docs/w1.png)
+![](docs/w2.png)
+![](docs/w3.png)
+![](docs/w4.png)
+![](docs/w5.png)
 
 
 ## Structure
