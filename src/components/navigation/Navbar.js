@@ -26,12 +26,10 @@ import {
 } from '@heroicons/react/outline'
 import { connect } from 'react-redux'
 import { logout } from '../../redux/actions/auth'
-import { ShoppingCartIcon } from '@heroicons/react/solid'
-
 import { get_categories } from '../../redux/actions/categories'
 import { get_search_products } from '../../redux/actions/products';
-
 import SearchBox from './SearchBox'
+import { ShoppingCartIcon } from '@heroicons/react/solid'
 
 const solutions = [
   {
@@ -102,7 +100,7 @@ function Navbar({
   get_categories,
   categories,
   get_search_products,
-  
+  total_items
 }) {
 
   // eslint-disable-next-line
@@ -114,15 +112,12 @@ function Navbar({
     search: ''
   });
   const { category_id, search } = formData;
-
-
-
+  
   useEffect(() => {
     get_categories()
   }, [])
-  
-  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
+  const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
   const onSubmit = e => {
     e.preventDefault();
@@ -134,12 +129,10 @@ function Navbar({
     return <Navigate to='/search' />;
   }
 
-  
   const logoutHandler = () => {
     logout()
     setRedirect(true);
   }
-
 
   if (redirect){
     window.location.reload(false)
@@ -185,7 +178,7 @@ function Navbar({
             
             
             <form method="POST" action="#">
-               <Menu.Item>
+              <Menu.Item>
                 {({ active }) => (
                   <button
                     onClick={logoutHandler}
@@ -240,7 +233,7 @@ function Navbar({
             <Link to="/cart" className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
               <ShoppingCartIcon className="h-6 w-6" aria-hidden="true" />
-              {/* <span className="text-xs absolute top-1 mt-3 ml-4 bg-red-500 text-white font-semibold rounded-full px-2 text-center">{total_items}</span> */}
+              <span className="text-xs absolute top-1 mt-3 ml-4 bg-red-500 text-white font-semibold rounded-full px-2 text-center">{total_items}</span>
             </Link>
             <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
               <span className="sr-only">Open menu</span>
@@ -251,9 +244,9 @@ function Navbar({
             <Popover.Group as="nav" className="flex space-x-10">
               
               <NavLink to="/shop" className={window.location.pathname==='/search'?' text-base font-medium text-gray-500 hover:text-gray-900':'mt-2 text-base font-medium text-gray-500 hover:text-gray-900'}>
-                Tienda
+                Shop
               </NavLink>
-
+              
               {window.location.pathname==='/search'?<></>:<SearchBox 
               search={search}
               onChange={onChange}
@@ -261,12 +254,12 @@ function Navbar({
               categories={categories}
               />}
               
-              
+             
             </Popover.Group>
             <div className="flex items-center md:ml-12">
               <Link to="/cart">
                 <ShoppingCartIcon className="h-8 w-8 cursor-pointer text-gray-300 mr-4"/>
-                {/* <span className="text-xs absolute top-1 mt-3 ml-4 bg-red-500 text-white font-semibold rounded-full px-2 text-center">{total_items}</span> */}
+                <span className="text-xs absolute top-1 mt-3 ml-4 bg-red-500 text-white font-semibold rounded-full px-2 text-center">{total_items}</span>
               </Link>
               {
                 isAuthenticated ? authLinks:guestLinks
@@ -395,12 +388,11 @@ const mapStateToProps = state => ({
   isAuthenticated: state.Auth.isAuthenticated,
   user: state.Auth.user,
   categories: state.Categories.categories,
-  
+  total_items: state.Cart.total_items
 })
 
 export default connect(mapStateToProps,{
   logout,
   get_categories,
-  get_search_products,
-
+  get_search_products
 }) (Navbar)
