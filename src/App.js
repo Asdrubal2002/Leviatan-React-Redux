@@ -18,6 +18,7 @@ import ProductDetail from './containers/pages/productDetail';
 
 import Search from './containers/pages/Search';
 import Cart from './containers/pages/Cart';
+import Checkout from './containers/pages/Checkout';
 
 function App() {
   return (
@@ -28,7 +29,7 @@ function App() {
 
         <Route exact path="/" element={<Home/>}/>
         <Route exact path='/cart' element={<Cart/>}/>
-      
+        <Route exact path='/checkout' element={<Checkout/>}/>
 
         {/* Authentication */}
         <Route exact path='/signup' element={<Signup/>}/>
