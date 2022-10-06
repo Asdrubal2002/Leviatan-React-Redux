@@ -1,5 +1,5 @@
 import Layout from "../../hocs/Layout"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { connect } from "react-redux"
 import { setAlert } from "../../redux/actions/alert";
 import {
@@ -12,7 +12,6 @@ import {
 import {
     remove_wishlist_item,
 } from "../../redux/actions/wishlist";
-import { useEffect } from "react";
 import CartItem from "../../components/cart/CartItem";
 import { Link } from "react-router-dom";
 import { QuestionMarkCircleIcon } from '@heroicons/react/solid'
