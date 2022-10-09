@@ -20,6 +20,9 @@ import Search from './containers/pages/Search';
 import Cart from './containers/pages/Cart';
 import Checkout from './containers/pages/Checkout';
 
+import Social from './containers/pages/Social';
+
+
 function App() {
   return (
     <Provider store={store}>
@@ -43,6 +46,9 @@ function App() {
         <Route exact path='/product/:productId' element={<ProductDetail/>}/>
       
         <Route exact path='/search' element={<Search/>}/>
+
+        {/**Social */}
+        <Route exact path='/social' element={<Social/>}/>
 
         
 

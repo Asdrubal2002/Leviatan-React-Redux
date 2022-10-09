@@ -82,7 +82,7 @@ export default function Example() {
                 </div>
   
                 <a
-                  href="#"
+                  href="/social"
                   className="inline-block text-center bg-blue-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-blue-700"
                 >
                   Publicaciones

@@ -1,5 +1,5 @@
 import Layout from "../../hocs/Layout"
-//import { useParams } from 'react-router'
+import { useParams } from 'react-router'
 import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -15,7 +15,7 @@ import {
   get_total,
   get_item_total
 } from "../../redux/actions/cart";
-//import { useEffect  } from "react";
+import { useEffect  } from "react";
 import {  useState } from "react";
 import ImageGallery from "../../components/product/ImageGallery";
 
@@ -49,15 +49,15 @@ const ProductDetail = ({
 
 
 
-  //const params = useParams()
-  //const productId = params.productId
+  const params = useParams()
+  const productId = params.productId
 
-  // useEffect(() => {
-  //   window.scrollTo(0, 0)
-  //   get_product(productId)
-  //   get_related_products(productId)
+   useEffect(() => {
+    window.scrollTo(0, 0)
+    get_product(productId)
+    get_related_products(productId)
 
-  // }, [])
+  }, [])
 
 
 
