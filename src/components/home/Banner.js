@@ -83,9 +83,9 @@ export default function Example() {
   
                 <a
                   href="#"
-                  className="inline-block text-center bg-indigo-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-indigo-700"
+                  className="inline-block text-center bg-blue-600 border border-transparent rounded-md py-3 px-8 font-medium text-white hover:bg-blue-700"
                 >
-                  Shop Collection
+                  Publicaciones
                 </a>
               </div>
             </div>
