@@ -7,6 +7,9 @@ Take a hands-on with Django, postgrest, and React redux to observe and learn how
 ![](docs/w3.png)
 ![](docs/w4.png)
 ![](docs/w5.png)
+![](docs/w6.png)
+![](docs/w7.png)
+![](docs/w8.png)
 
 
 ## Structure
